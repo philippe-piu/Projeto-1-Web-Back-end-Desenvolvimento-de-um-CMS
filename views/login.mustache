@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Importe css---->
+    <link rel="stylesheet" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <main class="main">
+    <div class="container__login">
+      <form action="/login" method="POST">
+      {{#error}} <!-- Verifica se há uma mensagem de erro -->
+        <p style="color: red;">{{error}}</p> <!-- Exibe a mensagem de erro se existir -->
+      {{/error}}
+        <input
+          class="input"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Ex:teste@gmail.com"
+          autofocus,
+          required
+        />
+
+        <input
+          class="input"
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Ex:123456"
+          autofocus,
+          required
+        />
+
+        <input class="input" id="botao" type="submit" value="Sign in" />
+      </form>
+    </div>
+      
+    </main>
+  </body>
+</html>
