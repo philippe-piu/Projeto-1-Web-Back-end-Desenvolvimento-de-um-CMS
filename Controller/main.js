@@ -20,7 +20,7 @@ router.post("/login", (req, res) =>{
     //Informa seção se torna verdadeira e o usuario está logado
     req.session.loggedin = true;
     //Redireciona para a página inicial de apo´s o login
-    res.redirect("/testeLogado");
+    res.redirect("/home");
   }else{
     //Em caso de algum erro no email ou na senha aparece uma mensagem de erro na tela
     res.render('login', { error: 'Email ou Senha incorretos' });
@@ -28,10 +28,10 @@ router.post("/login", (req, res) =>{
 })
 
 // Rota para verificar se o usuário está logado
-router.get('/testeLogado', (req, res) => {
+router.get('/home', (req, res) => {
   //Se o usuario estiver logado ele pode acessar as página de logado
   if (req.session.loggedin) {
-    res.render('testeLogado');
+    res.render('home');
   } else {
     //Se o usuario não estiver logado ele é redirecionado ao login
     res.redirect('/login');
