@@ -23,4 +23,25 @@ module.exports = {
     getNoticia(){
         return noticia;
     },
+    deleteNoticia(tituloDel){
+        let id = -1
+        for (let i = 0; i < noticias.length; i++){
+            if(noticias[i].titulo == tituloDel){
+                id = noticias[i].id
+                break
+            }
+        }
+    
+        if (id !== -1) {
+            noticias.splice(id, 1);
+            for (let i = id; i < noticias.length; i++) {
+                noticias[i].id -= 1;
+            }
+        
+            console.log("Valor excluído com sucesso!");
+        } else {
+            console.log("Valor não encontrado na lista.");
+        }
+    }
+    
 }
