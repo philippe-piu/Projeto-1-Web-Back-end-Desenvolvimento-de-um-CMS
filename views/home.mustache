@@ -47,7 +47,7 @@
 
         {{^noticias}}
           <div class="criar-noticia-container">
-           <form class="form-noticia" action="/new" method="POST">
+           <form class="form-noticia" action="/publicar" method="POST">
               <div class="header-form">
                 <h1>Crie sua primeira notícia esportiva</h1>
                 <h2>insira as informações abaixo para publicar sua notícia !!</h2>
@@ -66,13 +66,12 @@
                 </div>
 
                 <div class="input-conteuto-container">
-                    <label for="conteudo">Notícia:</label>
-                    <textarea name="conteudo" id="conteudo" cols="50" rows="10"></textarea>
+                    <textarea class="input-noticia" name="conteudo" id="conteudo"></textarea>
                 </div>
 
                 <div class="input-resumo-container">
                   <label for="resumo">Resumo:</label>
-                  <textarea name="resumo" id="resumo" cols="50" rows="10"></textarea>
+                  <textarea name="resumo" id="resumo" maxlength="200"></textarea>
                 </div>
 
                 <div class="rodape-container">
@@ -86,7 +85,9 @@
                   </div>
                 </div>
               </div>
-              
+              <div class="button-publicar">
+                 <button type="submit">Publicar</button>
+              </div>
            </form>
           </div>
         {{/noticias}}
