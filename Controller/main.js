@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
-
+const { getListNoticias } = require('../model/noticia');
 //Rota Para Inicial do Projeto
 router.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", {noticias: getListNoticias()});
 })
 
 //Rota Para Login

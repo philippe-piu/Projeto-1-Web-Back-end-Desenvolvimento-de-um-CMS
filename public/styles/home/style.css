@@ -380,7 +380,7 @@ textarea:focus{
 
 .edits-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 5px;
 }
 
