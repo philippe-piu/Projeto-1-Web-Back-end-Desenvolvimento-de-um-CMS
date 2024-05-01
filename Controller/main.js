@@ -27,17 +27,6 @@ router.post("/login", (req, res) =>{
   }
 })
 
-// Rota para verificar se o usuário está logado
-router.get('/home', (req, res) => {
-  //Se o usuario estiver logado ele pode acessar as página de logado
-  if (req.session.loggedin) {
-    res.render('home');
-  } else {
-    //Se o usuario não estiver logado ele é redirecionado ao login
-    res.redirect('/login');
-  }
-});
-
 // Rota para logout
 router.get('/logout', (req, res) => {
   //Sai da sessão de logado o usuario não se encontra mais logado

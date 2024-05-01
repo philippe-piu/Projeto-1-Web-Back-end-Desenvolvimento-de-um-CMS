@@ -29,6 +29,7 @@ app.use(session({
 }));
 
 app.use("/", require('./Controller/main'))
+app.use("/", require('./Controller/home'))
 
 app.listen(process.env.PORT, ()=> {
   console.log("Servidor Inicializado")
