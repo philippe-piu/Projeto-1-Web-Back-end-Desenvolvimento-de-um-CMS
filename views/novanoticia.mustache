@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="styles/home/style.css" rel="stylesheet">
+    <link href="styles/nova-noticia/style.css" rel="stylesheet">
     <title>Home</title>
   </head>
    <body class="container">
@@ -23,33 +23,7 @@
       </header>
 
       <main class="main-container">
-        {{#noticias}}
-          <section class="section-container">
-              <div class="card">
-                <div class="capa-container">
-                  <img src={{capa}} alt="">
-                  <span>{{tema}}</span>
-                </div>
-                <div class="conteudo-container">
-                  <h1>{{titulo}}</h1>
-                  <p class="text-resumo">
-                    {{resumo}}
-                  </p>
-                  <div class="edits-container">
-                    <a href="/noticias">EDITAR</a>
-                    <a href="/noticias">REMOVER</a>
-                  </div>
-                </div>
-                <p class="data">{{data}}</p>
-              </div>
-          </section>
-          <div class="button-novaNoticia">
-            <a>Criar Noticia</a>
-          </div>
-        {{/noticias}}
-
-        {{^noticias}}
-          <div class="criar-noticia-container">
+        <div class="criar-noticia-container">
            <form class="form-noticia" action="/publicar" method="POST">
               <div class="header-form">
                 <h1>Crie sua primeira notícia esportiva</h1>
@@ -92,8 +66,7 @@
                  <button type="submit">Publicar</button>
               </div>
            </form>
-          </div>
-        {{/noticias}}
+        </div>
       </main>
   </body>
 </html>
