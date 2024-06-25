@@ -10,7 +10,7 @@ router.get('/novanoticia', (req, res)=>{
     }
 });
 
-router.post('/publicar', (req, res) =>{
+router.post('/publicar', async (req, res) =>{
     const noticia = {
       titulo: req.body.titulo,
       categoria: req.body.categoria,
@@ -19,9 +19,17 @@ router.post('/publicar', (req, res) =>{
       autor: req.body.autor,
       data: req.body.date,
     }
-  
-    newNoticia(noticia);
-    res.redirect('/home');
-  });
+
+    try{
+        if(await newNoticia(noticia))
+            res.redirect('/home');
+
+    }catch(error){
+      console.error('Erro ao publicar notícia:', error); // Log de erro
+      
+      res.status(500).send('Erro ao publicar notícia');
+    };
+
+});
 
   module.exports = router

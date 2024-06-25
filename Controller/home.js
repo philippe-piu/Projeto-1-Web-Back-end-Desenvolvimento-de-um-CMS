@@ -14,18 +14,4 @@ router.get('/home', (req, res) => {
     }
 });
 
-router.post('/publicar', (req, res) =>{
-  const noticia = {
-    titulo: req.body.titulo,
-    categoria: req.body.categoria,
-    conteudo: req.body.conteudo,
-    resumo: req.body.resumo,
-    autor: req.body.autor,
-    data: req.body.date,
-  }
-
-  newNoticia(noticia);
-  res.redirect('/home');
-})
-
 module.exports = router
