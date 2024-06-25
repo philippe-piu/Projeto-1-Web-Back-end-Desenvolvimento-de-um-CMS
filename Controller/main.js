@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { getListNoticias } = require('../model/noticia');
+const { getNoticia, getListNoticias, newNoticia} = require('../model/noticia');
 //Rota Para Inicial do Projeto
 router.get("/", (req, res) => {
   res.render("index", {noticias: getListNoticias()});
@@ -8,7 +8,14 @@ router.get("/", (req, res) => {
 
 //Rota Para Login
 router.get("/login", (req, res) => {
-  res.render("login");
+
+  if (req.session.loggedin) {
+    res.render('home', {noticias: getListNoticias()})
+  } else {
+    //Se o usuario não estiver logado ele é redirecionado ao login
+    res.render("login");
+  }
+
 })
 
 //Rota de Verificação de Login

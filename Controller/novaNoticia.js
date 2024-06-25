@@ -2,7 +2,7 @@ const express = require('express');
 const { getNoticia, getListNoticias, newNoticia} = require('../model/noticia');
 const router = express.Router();
 
-router.get('novanoticia', (req, res)=>{
+router.get('/novanoticia', (req, res)=>{
     if(req.session.loggedin) {
         res.render('novanoticia');
     }else{
