@@ -2,8 +2,16 @@ const express = require('express')
 const router = express.Router()
 const { getNoticia, getListNoticias, newNoticia} = require('../model/noticia');
 //Rota Para Inicial do Projeto
-router.get("/", (req, res) => {
-  res.render("index", {noticias: getListNoticias()});
+router.get("/", async (req, res) => {
+      let noticias = await getListNoticias();
+      
+      if(noticias == null){
+        res.render('index');
+
+      }else{
+        res.render('index', {noticias: noticias});
+
+      }
 })
 
 //Rota Para Login

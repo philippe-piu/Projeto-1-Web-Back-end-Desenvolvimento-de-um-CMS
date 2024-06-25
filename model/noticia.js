@@ -39,8 +39,22 @@ module.exports = {
             throw new Error(`Erro ao criar nova notícia: ${error.message}`);
         };
     },
-    getListNoticias(){
-        return noticias;
+    async getListNoticias() {
+        try {
+            const arquivos = await fs.readdir(noticiasFolder);
+            const noticias = await Promise.all(arquivos.map(async file => {
+                const filePath = path.join(noticiasFolder, file);
+                const data = await fs.readFile(filePath, 'utf-8');
+                return JSON.parse(data);
+            }));
+            if(noticias.length > 0){
+                return noticias;
+            }else{
+                return null;
+            }
+        } catch (error) {
+            throw new Error(`Erro ao listar notícias: ${error.message}`);
+        }
     },
     getNoticia(){
         return noticia;
