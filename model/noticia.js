@@ -15,7 +15,7 @@ let noticia = {
     comentarios: []
 }
 
-const noticiasFolder = path.join(__dirname, '..', 'public', 'noticias');
+const noticiasFolder = path.join(__dirname, '..', 'data');
 
 module.exports = {
     async newNoticia(noticia){
