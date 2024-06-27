@@ -40,7 +40,10 @@
                     </p>
                     <div class="edits-container">
                       <a href="/noticias">EDITAR</a>
-                      <a href="/noticias">REMOVER</a>
+                      <form action="/deletar" method="POST" style="display:inline;">
+                          <input type="hidden" name="id" value="{{id}}">
+                          <button class="button-remover" type="submit">REMOVER</button>
+                      </form>
                     </div>
                   </div>
                   <p class="data">{{data}}</p>

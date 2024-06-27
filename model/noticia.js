@@ -60,24 +60,15 @@ module.exports = {
         return noticia;
     },
     
-    deleteNoticia(tituloDel){
-        let id = -1
-        for (let i = 0; i < noticias.length; i++){
-            if(noticias[i].titulo == tituloDel){
-                id = noticias[i].id
-                break
-            }
-        }
-    
-        if (id !== -1) {
-            noticias.splice(id, 1);
-            for (let i = id; i < noticias.length; i++) {
-                noticias[i].id -= 1;
-            }
-        
-            console.log("Valor excluído com sucesso!");
-        } else {
-            console.log("Valor não encontrado na lista.");
+    async deleteNoticia(id) {  // Nova função para deletar uma notícia pelo ID
+        try {
+            const filePath = path.join(noticiasFolder, `${id}.json`);  // Cria o caminho para o arquivo a ser deletado
+            await fs.unlink(filePath);  // Deleta o arquivo
+            console.log(`Notícia ${id} deletada com sucesso.`);
+            return true;
+        } catch (error) {
+            console.log(error.message);
+            throw new Error(`Erro ao deletar notícia: ${error.message}`);
         }
     }
     

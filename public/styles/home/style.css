@@ -385,3 +385,16 @@ textarea:focus{
 }
 
 
+/* Estilo do botão REMOVER */
+.button-remover {
+    background-color: #25984b; /* Verde */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button-remover:hover {
+    background-color: #004918; /* Verde mais escuro ao passar o mouse */
+}

@@ -1,5 +1,5 @@
 const express = require('express');
-const { getNoticia, getListNoticias, newNoticia} = require('../model/noticia');
+const { getListNoticias, deleteNoticia } = require('../model/noticia')
 const router = express.Router();
 
 
@@ -19,6 +19,17 @@ router.get('/home', async (req, res) => {
       //Se o usuario não estiver logado ele é redirecionado ao login
       res.redirect('/login');
     }
+});
+
+router.post('/deletar', async (req, res) => {  // Nova rota para deletar uma notícia
+  const { id } = req.body;
+  try {
+      await deleteNoticia(id);
+      res.redirect('/home');
+  } catch (error) {
+      console.error('Erro ao deletar notícia:', error); // Log de erro
+      res.status(500).send('Erro ao deletar notícia');
+  }
 });
 
 module.exports = router
