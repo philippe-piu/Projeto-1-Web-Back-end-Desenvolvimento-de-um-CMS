@@ -29,6 +29,8 @@ app.use(session({
 }));
 
 app.use("/", require('./Controller/main'))
+app.use("/", require('./Controller/home'))
+app.use("/", require('./Controller/novaNoticia'))
 
 app.listen(process.env.PORT, ()=> {
   console.log("Servidor Inicializado")
