@@ -65,7 +65,6 @@ ul, ol {
     font-weight: lighter;
 }
 
-
 .logo h1{
     font-style: italic;
     margin-top: -16px;
@@ -181,7 +180,7 @@ ul, ol {
     text-transform: uppercase;
 }
 
-.input-conteuto-container{
+.input-conteudo-container{
     width: 100%;
     height: 610px;
 }
@@ -299,122 +298,4 @@ textarea:focus{
     justify-content: center;
     align-items: center;
     font-weight: bold;
-}
-/*CSS CARDS NOTICIAS*/
-.section-container{
-    width: 82%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.card{
-    width: 350px;
-    height: 480px;
-    box-shadow: -5px 5px 12px rgba(0, 0, 0, 0.1), /* sombra do lado esquerdo */
-    5px 5px 12px rgba(0, 0, 0, 0.1); 
-    border-radius: 15px;
-    margin-bottom: 30px;
-}
-
-.capa-container{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-.capa-container img{
-    width: 100%;
-    height: 180px;
-    border-radius: 10px;
-    position: relative;
-}
-.capa-container span{
-    width: 100px;
-    height: 20px;
-    background-color: #14d802;
-    color: white;
-    font-size: 14px;
-    text-align: center;
-    padding-top: 2px;
-    border-radius: 10px;
-    position: absolute;
-}
-.conteudo-container{
-    width: 100%;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-    border-bottom: 2px solid rgb(223, 223, 223);
-}
-
-.conteudo-container h1{
-    width: 90%;
-    font-size: 22px;
-    text-align:left;
-    margin: 0 auto;
-    color:#25984b;
-}
-
-.text-resumo{
-    font-size: 16px;
-    width: 90%;
-    margin: 0 auto;
-    color: rgb(138, 138, 138);
-    margin-bottom: 5px;
-}
-
-.conteudo-container a{
-    font-size: 14px;
-    color:#25984b;
-    margin-left: 20px;
-    margin-bottom: 15px;
-}
-
-.data{
-    font-size: 14px;
-    color: rgb(138, 138, 138);
-    margin-left: 20px;
-}
-
-.edits-container{
-    display: flex;
-    justify-content: space-around;
-    padding: 5px;
-}
-
-
-/* Estilo do botão REMOVER */
-.button-remover {
-    background-color: #25984b; /* Verde */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.button-remover:hover {
-    background-color: #004918; /* Verde mais escuro ao passar o mouse */
-}
-
-/* Estilo do botão EDITAR */
-.button-editar {
-    background-color: #25984b; /* Verde */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-}
-
-.button-editar:hover {
-    background-color: #004918; /* Verde mais escuro ao passar o mouse */
-}
-
-.button-editar span {
-    color: white; /* Cor do texto */
 }

@@ -1,10 +1,10 @@
 {
-  "titulo": "Editado",
-  "categoria": "Essa noticia foi editada",
+  "titulo": "Essa noticia foi editada",
+  "categoria": "testando a edição",
   "conteudo": "",
-  "resumo": "resumo",
-  "autor": "Jhonny boy",
-  "data": "2024-06-25",
+  "resumo": "Espero que a edição tenha dado certo",
+  "autor": "Montilha",
+  "data": "2024-06-29",
   "id": 3,
   "date": "2024-06-29"
 }

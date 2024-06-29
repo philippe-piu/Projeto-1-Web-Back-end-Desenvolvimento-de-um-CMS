@@ -1,72 +1,72 @@
 <!doctype html>
 <html lang="pt">
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link href="styles/edit/style.css" rel="stylesheet"> -->
-  <title>+Esportes Editar Noticia</title>
-</head>
-<body class="container">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/styles/edit/style.css" rel="stylesheet">
+    <title>+Esportes Editar Noticia</title>
+  </head>
+  <body class="container">
 
-  <header class="header">
-    <div class="nav-container">
-      <div class="logo">
-        <h2>Blog</h2>
-        <h1>+Esportes</h1>
+    <header class="header">
+      <div class="nav-container">
+        <div class="logo">
+          <h2>Blog</h2>
+          <h1>+Esportes</h1>
+        </div>
+        <a href="/" class="button-entrar">
+          <img src="assets/voltar.png" alt="">
+          Sair
+        </a>       
       </div>
-      <a href="/" class="button-entrar">
-        <img src="/assets/voltar.png" alt="">
-        Sair
-      </a>
-    </div>
-  </header>
+    </header>
 
-  <main class="main-container">
-    <div class="criar-noticia-container">
-      <form class="form-noticia" action="/editar/{{id}}" method="POST">
-        <div class="header-form">
-          <h1>Edite sua notícia esportiva</h1>
-          <h2>altere as informações abaixo que desejar para alterar a notícia!</h2>
-        </div>
-
-        <div class="main-form">
-          <div class="cabecalho-container">
-            <div class="input-tittle-container">
-              <label for="titulo">Titulo:</label>
-              <input type="text" name="titulo" id="titulo" value="{{titulo}}">
-            </div>
-            <div class="input-tema-container">
-              <label for="categoria">Tema:</label>
-              <input type="text" name="categoria" id="categoria" value="{{categoria}}">
-            </div>
+    <main class="main-container">
+      <div class="criar-noticia-container">
+        <form class="form-noticia" action="/editar/{{id}}" method="POST">
+          <div class="header-form">
+            <h1>Edite sua notícia esportiva</h1>
+            <h2>Altere as informações abaixo que desejar para alterar a notícia!</h2>
           </div>
 
-          <div class="input-conteuto-container">
-            <textarea class="input-noticia" name="conteudo" id="conteudo">{{conteudo}}</textarea>
-          </div>
-
-          <div class="input-resumo-container">
-            <label for="resumo">Resumo:</label>
-            <textarea name="resumo" id="resumo" maxlength="200">{{resumo}}</textarea>
-          </div>
-
-          <div class="rodape-container">
-            <div class="input-autor-container">
-              <label for="autor">Autor:</label>
-              <input type="text" name="autor" id="autor" value="{{autor}}">
+          <div class="main-form">
+            <div class="cabecalho-container">
+              <div class="input-tittle-container">
+                <label for="titulo">Titulo:</label>
+                <input type="text" name="titulo" id="titulo" value="{{titulo}}">
+              </div>
+              <div class="input-tema-container">
+                <label for="tema">Tema:</label>
+                <input type="text" name="categoria" id="categoria" value="{{categoria}}">
+              </div>
             </div>
-            <div class="input-data-container">
-              <label for="data">Data de publicação:</label>
-              <input type="date" name="date" id="date" value="{{data}}">
+
+            <div class="input-conteudo-container">
+              <textarea class="input-noticia" name="conteudo" id="conteudo">{{conteudo}}</textarea>
+            </div>
+
+            <div class="input-resumo-container">
+              <label for="resumo">Resumo:</label>
+              <textarea name="resumo" id="resumo" maxlength="200">{{resumo}}</textarea>
+            </div>
+
+            <div class="rodape-container">
+              <div class="input-autor-container">
+                <label for="autor">Autor:</label>
+                <input type="text" name="autor" id="autor" value="{{autor}}">
+              </div>
+              <div class="input-data-container">
+                <label for="data">Data de publicação:</label>
+                <input type="date" name="data" id="data" value="{{data}}">
+              </div>
             </div>
           </div>
-        </div>
-        <div class="button-editar">
-          <button type="submit">Editar</button>
-        </div>
-      </form>
-    </div>
-  </main>
-</body>
+          <div class="button-publicar">
+            <button type="submit">Editar</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
 </html>
