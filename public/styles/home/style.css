@@ -398,3 +398,18 @@ textarea:focus{
 .button-remover:hover {
     background-color: #004918; /* Verde mais escuro ao passar o mouse */
 }
+
+/* Estilo do botão EDITAR */
+.button-editar {
+    background-color: #25984b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .button-editar:hover {
+    background-color: #004918;
+  }
+  
