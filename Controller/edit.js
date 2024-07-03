@@ -1,18 +1,8 @@
 const express = require('express');
-const router = express.Router();
 const fs = require('fs');
 const path = require('path');
-
-// Função para carregar uma notícia pelo ID
-const loadNoticia = (id) => {
-  const filePath = path.join(__dirname, `../data/${id}.json`);
-  if (fs.existsSync(filePath)) {
-    const data = fs.readFileSync(filePath);
-    return JSON.parse(data);
-  } else {
-    return null;
-  }
-};
+const { loadNoticia } = require('../utils/noticiaLoader');
+const router = express.Router();
 
 // Função para salvar uma notícia pelo ID
 const saveNoticia = (id, noticia) => {
