@@ -6,9 +6,11 @@ const { getNoticia, getListNoticias, newNoticia } = require('../model/noticia')
 router.get('/', async (req, res) => {
   let noticias = await getListNoticias()
 
-  if (noticias == null) {
+  if (noticias == null || noticias.length === 0) {
+    // Sem notícias, renderiza a página inicial padrão
     res.render('index')
   } else {
+    // Renderiza a página inicial com notícias
     res.render('index', { noticias: noticias })
   }
 })

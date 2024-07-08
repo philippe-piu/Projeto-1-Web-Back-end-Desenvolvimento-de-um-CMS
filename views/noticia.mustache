@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+     <!--Importe css---->
+     <link href="styles/index/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/noticia/style.css">
+    
+    <title>{{noticia.titulo}}</title> 
+  </head>
+  
+  <body class="container">
+   <!--Menu-->
+    <header class="header">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="/">
+            <h2>Blog</h2>
+            <h1>+Esportes</h1>
+          </a>
+        </div>
+        <a href="/" class="button-entrar">Voltar</a>       
+      </div>
+    </header>
+
+    <main class="main-container">
+      <article class="noticia">
+        <h1>{{noticia.titulo}}</h1>
+        <p><strong>Categoria:</strong> {{noticia.categoria}}</p>
+        <p><strong>Autor:</strong> {{noticia.autor}}</p>
+        <p><strong>Data:</strong> {{noticia.data}}</p>
+        <div class="conteudo">
+          {{noticia.conteudo}}
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
