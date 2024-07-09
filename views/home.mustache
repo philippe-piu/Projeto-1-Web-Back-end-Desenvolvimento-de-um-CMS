@@ -40,7 +40,7 @@
                     </p>
                     <div class="edits-container">
                       <a href="/editar/{{id}}" class="button-editar"><span>EDITAR</span></a>
-                      <form action="/deletar" method="POST" style="display:inline;">
+                      <form action="/deletar" method="POST" style="display:inline;" onsubmit="event.preventDefault(); openDeleteModal(this);">
                           <input type="hidden" name="id" value="{{id}}">
                           <button class="button-remover" type="submit">REMOVER</button>
                       </form>
@@ -97,5 +97,45 @@
               {{/noticias}}
           </section>       
         </main>
+        
+        <!-- Modal de confirmação -->
+        <div id="deleteModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Você tem certeza que deseja deletar esta notícia?</p>
+            <button id="confirmDelete" class="button-remover">Sim</button>
+            <button id="cancelDelete" class="button-cancelar">Não</button>
+          </div>
+        </div>
+
+        <!-- Adicione o script de confirmação antes do fechamento da tag body -->
+        <script>
+          function openDeleteModal(form) {
+            const modal = document.getElementById('deleteModal');
+            modal.style.display = 'block';
+            
+            const confirmButton = document.getElementById('confirmDelete');
+            const cancelButton = document.getElementById('cancelDelete');
+            const span = document.getElementsByClassName('close')[0];
+
+            confirmButton.onclick = function() {
+              form.submit();
+            };
+
+            cancelButton.onclick = function() {
+              modal.style.display = 'none';
+            };
+
+            span.onclick = function() {
+              modal.style.display = 'none';
+            };
+
+            window.onclick = function(event) {
+              if (event.target == modal) {
+                modal.style.display = 'none';
+              }
+            };
+          }
+        </script>
   </body>
 </html>

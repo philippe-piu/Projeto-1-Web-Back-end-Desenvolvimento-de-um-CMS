@@ -12,10 +12,4 @@ const loadNoticia = (id) => {
   }
 };
 
-// Função para salvar uma notícia pelo ID
-const saveNoticia = (id, noticia) => {
-  const filePath = path.join(__dirname, `../data/${id}.json`);
-  fs.writeFileSync(filePath, JSON.stringify(noticia, null, 2));
-};
-
 module.exports = { loadNoticia };
