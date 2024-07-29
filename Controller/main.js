@@ -1,14 +1,29 @@
 const express = require('express')
 const router = express.Router()
-
+const { getNoticia, getListNoticias, newNoticia} = require('../model/noticia');
 //Rota Para Inicial do Projeto
-router.get("/", (req, res) => {
-  res.render("index");
+router.get("/", async (req, res) => {
+      let noticias = await getListNoticias();
+      
+      if(noticias == null){
+        res.render('index');
+
+      }else{
+        res.render('index', {noticias: noticias});
+
+      }
 })
 
 //Rota Para Login
 router.get("/login", (req, res) => {
-  res.render("login");
+
+  if (req.session.loggedin) {
+    res.render('home', {noticias: getListNoticias()})
+  } else {
+    //Se o usuario não estiver logado ele é redirecionado ao login
+    res.render("login");
+  }
+
 })
 
 //Rota de Verificação de Login
@@ -20,23 +35,12 @@ router.post("/login", (req, res) =>{
     //Informa seção se torna verdadeira e o usuario está logado
     req.session.loggedin = true;
     //Redireciona para a página inicial de apo´s o login
-    res.redirect("/testeLogado");
+    res.redirect("/home");
   }else{
     //Em caso de algum erro no email ou na senha aparece uma mensagem de erro na tela
     res.render('login', { error: 'Email ou Senha incorretos' });
   }
 })
-
-// Rota para verificar se o usuário está logado
-router.get('/testeLogado', (req, res) => {
-  //Se o usuario estiver logado ele pode acessar as página de logado
-  if (req.session.loggedin) {
-    res.render('testeLogado');
-  } else {
-    //Se o usuario não estiver logado ele é redirecionado ao login
-    res.redirect('/login');
-  }
-});
 
 // Rota para logout
 router.get('/logout', (req, res) => {
