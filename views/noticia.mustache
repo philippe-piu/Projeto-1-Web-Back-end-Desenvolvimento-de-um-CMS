@@ -1,15 +1,98 @@
 <!-- views/noticia.mustache -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="styles/index/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="styles/noticia/style.css">
-    <title>{{noticia.titulo}}</title> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      .container {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+          'Lucida Sans', Arial, sans-serif;
+      }
+
+      /*HEADER CSS GERAL*/
+      .header {
+        display: flex;
+        width: 100%;
+        height: 110px;
+        justify-content: flex-end;
+        background-color: #25984b;
+        color: white;
+        box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .nav-container {
+        width: 54%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 20px;
+      }
+
+      .logo h2 {
+        font-style: oblique;
+        font-size: 28px;
+        font-weight: lighter;
+      }
+
+      .logo h1 {
+        font-style: italic;
+        margin-top: -16px;
+        font-size: 40px;
+        font-weight: bolder;
+        text-decoration: overline;
+      }
+
+      .main-container .titulo {
+        text-align: center;
+        letter-spacing: 5px;
+        text-align: justify;
+        margin: 50px;
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      .conteudo {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin: 20px;
+        text-align: justify;
+        padding: 20px;
+        font-size: 18px;
+      }
+
+      .info {
+        display: flex;
+        gap: 2;
+        margin: 20px 30px;
+      }
+
+      .info p {
+        margin: 0 10px;
+      }
+    </style>
+
+    <title>{{noticia.titulo}}</title>
   </head>
-  
+
   <body class="container">
     <!--Menu-->
     <header class="header">
@@ -20,19 +103,19 @@
             <h1>+Esportes</h1>
           </a>
         </div>
-        <a href="/" class="button-entrar">Voltar</a>       
+        <a href="/" class="button-entrar">Voltar</a>
       </div>
     </header>
 
     <main class="main-container">
       <article class="noticia">
-        <h1>{{noticia.titulo}}</h1>
-        <p><strong>Categoria:</strong> {{noticia.categoria}}</p>
-        <p><strong>Autor:</strong> {{noticia.autor}}</p>
-        <p><strong>Data:</strong> {{noticia.data}}</p>
-        <div class="conteudo">
-          {{noticia.conteudo}}
+        <h1 class="titulo">{{noticia.titulo}}</h1>
+        <div class="info">
+          <p><strong>Categoria:</strong> {{noticia.categoria}}</p>
+          <p><strong>Autor:</strong> {{noticia.autor}}</p>
+          <p><strong>Data:</strong> {{noticia.data}}</p>
         </div>
+        <div class="conteudo">{{noticia.conteudo}}</div>
       </article>
     </main>
   </body>
