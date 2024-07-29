@@ -20,22 +20,14 @@ const noticiasFolder = path.join(__dirname, '..', 'data');
 module.exports = {
     async newNoticia(noticia){
         try{
-            
             noticia.id = await geraId();
-
             const filePath = path.join(noticiasFolder, `${noticia.id}.json`);
             const jsonData = JSON.stringify(noticia, null, 2);
-            
             await fs.writeFile(filePath, jsonData);
-            
             console.log(noticia);
-
             return true;
-
         }catch(error){
-            
             console.log(error.message);
-            
             throw new Error(`Erro ao criar nova notícia: ${error.message}`);
         };
     },
@@ -56,20 +48,27 @@ module.exports = {
             throw new Error(`Erro ao listar notícias: ${error.message}`);
         }
     },
-    getNoticia(){
-        return noticia;
-    },
+    async getNoticia(noticiaId) {
+        try {
+            // Criando o caminho completo para o arquivo JSON da notícia
+            const filePath = path.join(noticiasFolder, `${noticiaId}.json`);
+            // Lê o conteúdo do arquivo de forma assíncrona, aguardando a conclusão
+            const data = await fs.readFile(filePath, 'utf-8');
+           // Converte o conteúdo do arquivo de JSON para objeto
+            return JSON.parse(data);
+        } catch (error) {
+            //Captura e lança um erro com uma mensagem personalizada, caso ocorra um problema
+            throw new Error(`Erro ao obter notícia: ${error.message}`);
+        }
+    }
 }
 
 async function geraId() {
     try {
         const files = await fs.readdir(noticiasFolder);
-        
         return files.length + 1;
-
     } catch (error) {
         console.log(error.message);
-        
         throw new Error(`Erro ao obter próximo ID: ${error.message}`);
     }
 }

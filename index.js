@@ -34,7 +34,7 @@ app.use(
 app.use('/', require('./Controller/main'))
 app.use('/', require('./Controller/home'))
 app.use('/', require('./Controller/novaNoticia'))
-app.use('/', require('./Controller/noticia'))
+app.use("/", require('./Controller/noticia'));
 
 app.listen(process.env.PORT, () => {
   console.log('Servidor Inicializado')
