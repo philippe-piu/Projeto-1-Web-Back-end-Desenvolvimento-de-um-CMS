@@ -5,41 +5,125 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Importe css---->
-    <link rel="stylesheet" href="/stylesheets/reset.css" />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link href="styles/index/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/login/style.css" />
+
+    <style>
+      .container {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+          'Lucida Sans', Arial, sans-serif;
+      }
+
+      .main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .container__login {
+        display: flex;
+        flex-direction: column;
+        background-color: #25984b;
+        width: 500px;
+        height: 300px;
+        margin-top: 120px;
+        border-radius: 25px;
+        border: 2px solid #25984b;
+        align-items: center;
+      }
+
+      .container__login form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+
+      .input {
+        margin: 10px 0;
+        padding: 10px;
+        width: 200%;
+        max-width: 300px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+
+      .botao {
+        background-color: #ccc;
+        margin-top: 20px;
+        padding: 5px 45px;
+        border: none;
+        border-radius: 5px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+          'Lucida Sans', Arial, sans-serif;
+        width: auto;
+        display: flex;
+        align-items: center;
+      }
+
+      .botao .input {
+        flex: 1;
+        text-align: center;
+      }
+    </style>
     <title>Login</title>
   </head>
-  <body>
+
+  <body class="container">
+    <!--Menu-->
+    <header class="header">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="/">
+            <h2>Blog</h2>
+            <h1>+Esportes</h1>
+          </a>
+        </div>
+      </div>
+    </header>
+
     <main class="main">
-    <div class="container__login">
-      <form action="/login" method="POST">
-      {{#error}} <!-- Verifica se há uma mensagem de erro -->
-        <p style="color: red;">{{error}}</p> <!-- Exibe a mensagem de erro se existir -->
-      {{/error}}
-        <input
-          class="input"
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Ex:teste@gmail.com"
-          autofocus,
-          required
-        />
+      <div class="container__login">
+        <form action="/login" method="POST">
+          {{#error}}
+          <!-- Verifica se há uma mensagem de erro -->
+          <p style="color: red">{{error}}</p>
+          <!-- Exibe a mensagem de erro se existir -->
+          {{/error}}
+          <input
+            class="input"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Ex:teste@gmail.com"
+            autofocus,
+            required
+          />
 
-        <input
-          class="input"
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Ex:123456"
-          autofocus,
-          required
-        />
-
-        <input class="input" id="botao" type="submit" value="Sign in" />
-      </form>
-    </div>
-      
+          <input
+            class="input"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Ex:123456"
+            autofocus,
+            required
+          />
+          <div class="botao">
+            <input class="input" id="botao" type="submit" value="Sign in" />
+          </div>
+        </form>
+      </div>
     </main>
   </body>
 </html>
