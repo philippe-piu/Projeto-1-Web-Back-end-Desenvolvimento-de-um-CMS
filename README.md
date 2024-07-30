@@ -35,3 +35,11 @@
 <br>
 <p>6 - Página onde o usuário pode remover uma notícia.</p>
 <img src="/Figuras/6.PNG" alt="Edição">
+<br>
+<p>Está é as imagens do Trabalho.</p> 
+<p>O trabalho foi feito pelo.</p>
+<ul>
+<li><a href="https://github.com/philippe-piu">Philippe</a></li>
+<li><a href="https://github.com/hebertwilly">Hebert</a></li>
+<li><a href="https://github.com/JPMontilha">João Pedro</a></li>
+</ul>
