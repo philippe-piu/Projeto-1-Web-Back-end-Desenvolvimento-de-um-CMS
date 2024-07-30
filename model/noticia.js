@@ -60,15 +60,62 @@ module.exports = {
             //Captura e lança um erro com uma mensagem personalizada, caso ocorra um problema
             throw new Error(`Erro ao obter notícia: ${error.message}`);
         }
+    },
+
+    async deleteNoticia(id) {  // Nova função para deletar uma notícia pelo ID
+        try {
+            const filePath = path.join(noticiasFolder, `${id}.json`);  // Cria o caminho para o arquivo a ser deletado
+            await fs.unlink(filePath);  // Deleta o arquivo
+            console.log(`Notícia ${id} deletada com sucesso.`);
+            return true;
+        } catch (error) {
+            console.log(error.message);
+            throw new Error(`Erro ao deletar notícia: ${error.message}`);
+        }
+    }
+    
+}
+
+async function readLastFile(directoryPath) {
+    try {
+        const files = fs1.readdirSync(directoryPath);
+
+        // Filtra apenas arquivos com a extensão .json
+        const jsonFiles = files.filter(file => fs1.lstatSync(path.join(directoryPath, file)).isFile() && path.extname(file) === '.json');
+        
+        // Ordena os arquivos em ordem alfabética
+        jsonFiles.sort();
+
+        // Pega o último arquivo na lista ordenada
+        const lastFile = jsonFiles.length > 0 ? jsonFiles[jsonFiles.length - 1] : null;
+
+        if (lastFile) {
+            // Remove a extensão .json
+            return path.basename(lastFile, '.json');
+        } else {
+            return null;
+        }
+    } catch (err) {
+        console.error('Erro ao ler o diretório:', err);
+        return null;
     }
 }
 
+
 async function geraId() {
     try {
-        const files = await fs.readdir(noticiasFolder);
-        return files.length + 1;
-    } catch (error) {
-        console.log(error.message);
-        throw new Error(`Erro ao obter próximo ID: ${error.message}`);
+        const lastFile = await readLastFile(noticiasFolder);
+        let newId;
+        if (lastFile) {
+            newId = parseInt(lastFile, 10) + 1;
+            console.log('Novo ID:', newId);
+        } else {
+            newId = 1;
+            console.log('Novo ID:', newId);
+        }
+        return newId;
+    } catch (err) {
+        console.error('Erro ao ler o diretório:', err);
+        return null;
     }
 }
