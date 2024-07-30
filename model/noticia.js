@@ -1,4 +1,5 @@
-const fs = require('fs').promises; 
+const fs = require('fs').promises;
+const fs1 = require('fs')
 const path = require('path');
 let id = 1;
 let noticias = [];
