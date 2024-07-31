@@ -365,7 +365,7 @@ textarea:focus{
     margin-bottom: 5px;
 }
 
-.conteudo-container a{
+.conteudo-container .button-editar{
     font-size: 14px;
     color:#25984b;
     margin-left: 20px;
@@ -381,44 +381,24 @@ textarea:focus{
 .edits-container{
     display: flex;
     justify-content: space-around;
-    padding: 5px;
+    align-items: center;
 }
 
 
 /* Estilo do botão REMOVER */
-.button-remover {
-    background-color: #25984b; /* Verde */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.button-remover:hover {
-    background-color: #004918; /* Verde mais escuro ao passar o mouse */
-}
 
 /* Estilo do botão EDITAR */
-.button-editar {
-    background-color: #25984b; /* Verde */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
+.button-editar{
+    color: #25984b;
+    font-size: 20px;
     cursor: pointer;
-    display: inline-block;
     text-align: center;
+    justify-content: center;
 }
 
-.button-editar:hover {
-    background-color: #004918; /* Verde mais escuro ao passar o mouse */
+.button-editar:hover{
+    color:#004918
 }
-
-.button-editar span {
-    color: white; /* Cor do texto */
-}
-
 /* Estilos para o modal de confirmação */
 .modal {
     display: none;

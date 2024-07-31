@@ -15,7 +15,7 @@
               <h2>Blog</h2>
               <h1>+Esportes</h1>
             </div>
-            <a href="/" class="button-entrar">
+            <a href="/logout" class="button-entrar">
               <img src="assets/voltar.png" alt="">
               Sair
             </a>
@@ -39,10 +39,10 @@
                       {{resumo}}
                     </p>
                     <div class="edits-container">
-                      <a href="/editar/{{id}}" class="button-editar"><span>EDITAR</span></a>
-                      <form action="/deletar" method="POST" style="display:inline;" onsubmit="event.preventDefault(); openDeleteModal(this);">
+                      <a href="/editar/{{id}}" class="button-editar">EDITAR</a>
+                      <form action="/deletar" method="POST" onsubmit="event.preventDefault(); openDeleteModal(this);">
                           <input type="hidden" name="id" value="{{id}}">
-                          <button class="button-remover" type="submit">REMOVER</button>
+                          <button class="button-editar" type="submit">REMOVER</button>
                       </form>
                     </div>
                   </div>

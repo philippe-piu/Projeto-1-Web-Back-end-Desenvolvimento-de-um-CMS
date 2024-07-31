@@ -5,12 +5,16 @@ const { getNoticia, getListNoticias, newNoticia} = require('../model/noticia');
 router.get("/", async (req, res) => {
       let noticias = await getListNoticias();
       
-      if(noticias == null){
-        res.render('index');
-
+      if (req.session.loggedin) {
+        res.render('home', {noticias: noticias})
       }else{
-        res.render('index', {noticias: noticias});
-
+        if(noticias == null){
+          res.render('index');
+  
+        }else{
+          res.render('index', {noticias: noticias});
+  
+        }
       }
 })
 

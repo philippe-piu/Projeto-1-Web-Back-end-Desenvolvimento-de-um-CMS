@@ -14,10 +14,15 @@ const saveNoticia = (id, noticia) => {
 router.get('/editar/:id', (req, res) => {
   const id = req.params.id;
   const noticia = loadNoticia(id);
-  if (noticia) {
-    res.render('edit', noticia);
-  } else {
-    res.status(404).send('Notícia não encontrada');
+
+  if (req.session.loggedin){
+    if (noticia) {
+      res.render('edit', noticia);
+    } else {
+      res.status(404).send('Notícia não encontrada');
+    }
+  }else{
+    res.redirect('/login');
   }
 });
 
@@ -30,7 +35,7 @@ router.post('/editar/:id', (req, res) => {
   if (noticia) {
     const updatedNoticia = { ...noticia, ...updatedData };
     saveNoticia(id, updatedNoticia);
-    res.redirect('/'); // Redirecione para a página principal após a edição
+    res.redirect('/home'); // Redirecione para a página principal após a edição
   } else {
     res.status(404).send('Notícia não encontrada');
   }
