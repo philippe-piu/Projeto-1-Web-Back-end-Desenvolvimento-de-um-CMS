@@ -4,7 +4,7 @@ const { getNoticia } = require('../model/noticia');
 const router = express.Router();
 
 // Rota para exibir uma notícia específica
-router.get('/noticia/:id', async (req, res) => {
+router.get('/noticia/:id/:titulo', async (req, res) => {
   const noticiaId = req.params.id;
   try {
     const noticia = await getNoticia(noticiaId);

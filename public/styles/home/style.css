@@ -295,6 +295,16 @@ textarea:focus{
     margin-bottom: 5px;
 }
 
+.leia-mais-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leia-mais{
+    color: #14d802;
+}
 .button-publicar{
     width: 100%;
 }
@@ -328,7 +338,7 @@ textarea:focus{
     box-shadow: -5px 5px 12px rgba(0, 0, 0, 0.1), /* sombra do lado esquerdo */
     5px 5px 12px rgba(0, 0, 0, 0.1); 
     border-radius: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 65px;
 }
 
 .capa-container{

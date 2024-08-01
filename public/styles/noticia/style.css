@@ -75,6 +75,8 @@ input:focus {
   text-align: justify;
   padding: 20px;
   font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 2px;
 }
 
 .info {

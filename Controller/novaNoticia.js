@@ -14,6 +14,7 @@ router.get('/novanoticia', (req, res)=>{
 router.post('/publicar', upload.single('image'), async (req, res) =>{
     const { titulo, categoria, conteudo, resumo, autor, date } = req.body;
     const image = req.file ? req.file.filename : null;
+    
 
     const noticia = {
       titulo,
