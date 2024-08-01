@@ -1,0 +1,104 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input:focus {
+  outline: none;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+/* HEADER CSS GERAL */
+.header {
+  display: flex;
+  width: 100%;
+  height: 110px;
+  justify-content: flex-end;
+  background-color: #25984b;
+  color: white;
+  box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  width: 54%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.logo h2 {
+  font-style: oblique;
+  font-size: 28px;
+  font-weight: lighter;
+}
+
+.logo h1 {
+  font-style: italic;
+  margin-top: -16px;
+  font-size: 40px;
+  font-weight: bolder;
+  text-decoration: overline;
+}
+
+.main-container .titulo {
+  text-align: center;
+  letter-spacing: 5px;
+  text-align: justify;
+  margin: 50px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.resumo {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 50px;
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 20px;
+  text-align: justify;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.info {
+  display: flex;
+  gap: 2px;
+  margin: 20px 30px;
+}
+
+.info p {
+  margin: 0 10px;
+}
+
+.imagem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+.imagem img {
+  max-width: 80%;
+  max-height: 80%;
+  width: 300px;
+  height: 300px;
+}

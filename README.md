@@ -22,6 +22,7 @@
 <img src="/Figuras/1.PNG" alt="Página inicial">
 <br>
 <p>2 - Ao clicar no ícone de login, você é redirecionado para a página de login.</p>
+<p>Coloque este email e senha: Email: teste@gmail.com Senha:123456</p>
 <img src="/Figuras/2.PNG" alt="Login">
 <br>
 <p>3 - Após isso, o usuário é redirecionado para a página inicial, onde você pode criar, editar e remover notícias.</p>
