@@ -1,6 +1,7 @@
 const express = require('express');
-const { getNoticia, getListNoticias, newNoticia} = require('../model/noticia');
+const { newNoticia } = require('../model/noticia');
 const router = express.Router();
+const upload = require('../utils/multerConfig');
 
 router.get('/novanoticia', (req, res)=>{
     if(req.session.loggedin) {
@@ -10,14 +11,18 @@ router.get('/novanoticia', (req, res)=>{
     }
 });
 
-router.post('/publicar', async (req, res) =>{
+router.post('/publicar', upload.single('image'), async (req, res) =>{
+    const { titulo, categoria, conteudo, resumo, autor, date } = req.body;
+    const image = req.file ? req.file.filename : null;
+
     const noticia = {
-      titulo: req.body.titulo,
-      categoria: req.body.categoria,
-      conteudo: req.body.conteudo,
-      resumo: req.body.resumo,
-      autor: req.body.autor,
-      data: req.body.date,
+      titulo,
+      categoria,
+      conteudo,
+      resumo,
+      autor,
+      date,
+      image
     }
 
     try{

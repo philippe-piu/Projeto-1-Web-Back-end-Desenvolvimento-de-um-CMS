@@ -227,6 +227,19 @@ textarea:focus{
     outline: none;
 }
 
+.input-image-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.input-image-container label{
+    font-size: 22px;
+    color: rgb(138, 138, 138);
+    margin-bottom: 15px;
+}
+
 .rodape-container{
     display: flex;
     width: 100%;
@@ -372,10 +385,18 @@ textarea:focus{
     margin-bottom: 15px;
 }
 
-.data{
-    font-size: 14px;
+.rodape-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+
+.data, .autor{
+    font-size: 16px;
     color: rgb(138, 138, 138);
-    margin-left: 20px;
 }
 
 .edits-container{

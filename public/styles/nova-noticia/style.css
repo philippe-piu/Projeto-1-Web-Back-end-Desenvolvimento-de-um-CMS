@@ -227,6 +227,19 @@ textarea:focus{
     outline: none;
 }
 
+.input-image-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.input-image-container label{
+    font-size: 22px;
+    color: rgb(138, 138, 138);
+    margin-bottom: 15px;
+}
+
 .rodape-container{
     display: flex;
     width: 100%;

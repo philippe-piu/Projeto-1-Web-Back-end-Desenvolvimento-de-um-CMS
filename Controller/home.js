@@ -3,6 +3,7 @@ const { getListNoticias, deleteNoticia } = require('../model/noticia');
 const { loadNoticia } = require('../utils/noticiaLoader'); // Importa a função loadNoticia do utilitário de notícias
 const router = express.Router();
 
+
 router.get('/home', async (req, res) => {
   // Se o usuario estiver logado ele pode acessar as páginas de logado
   if (req.session.loggedin) {

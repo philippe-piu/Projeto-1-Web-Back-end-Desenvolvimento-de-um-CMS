@@ -1,9 +1,10 @@
 {
-  "titulo": "LUTONA",
+  "titulo": "Segunda noticia",
   "categoria": "MIDIA",
-  "conteudo": "quarta",
-  "resumo": "quarta",
-  "autor": "Hebert Willy",
-  "data": "2024-06-25",
+  "conteudo": "vamo que vamo",
+  "resumo": "dois",
+  "autor": "Rogério Flauzino",
+  "date": "2024-07-30",
+  "image": "1722470322006.png",
   "id": 2
 }

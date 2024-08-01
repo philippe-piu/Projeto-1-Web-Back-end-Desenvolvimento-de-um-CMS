@@ -1,6 +1,6 @@
 //Requires gerais
-const path = require("path")
-require("dotenv").config()
+const path = require("path");
+require("dotenv").config();
 
 //Express
 const express = require('express')
@@ -17,8 +17,8 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "mustache");
 
 //Cokies
-const cookieParser = require("cookie-parser")
-app.use(cookieParser())
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
 
 //Sessão
 const session = require("express-session")
@@ -37,3 +37,4 @@ app.use("/", require('./Controller/noticia'))
 app.listen(process.env.PORT, ()=> {
   console.log("Servidor Inicializado")
 })
+

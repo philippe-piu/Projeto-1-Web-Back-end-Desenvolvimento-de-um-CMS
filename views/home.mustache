@@ -30,7 +30,7 @@
               {{#noticias}}
                 <div class="card">
                   <div class="capa-container">
-                    <img src={{capa}} alt="">
+                    <img src="/uploads/{{image}}" alt=" ">
                     <span>{{tema}}</span>
                   </div>
                   <div class="conteudo-container">
@@ -46,12 +46,15 @@
                       </form>
                     </div>
                   </div>
-                  <p class="data">{{data}}</p>
+                   <div class="rodape-container">
+                      <p class="autor">Autor: {{autor}}</p>
+                      <p class="data">{{date}}</p>
+                    </div>
                 </div>
               {{/noticias}}
               {{^noticias}}
                 <div class="criar-noticia-container">
-                  <form class="form-noticia" action="/publicar" method="POST">
+                  <form class="form-noticia" action="/publicar" method="POST" enctype="multipart/form-data">
                       <div class="header-form">
                         <h1>Crie sua primeira notícia esportiva</h1>
                         <h2>insira as informações abaixo para publicar sua notícia !!</h2>
@@ -76,6 +79,11 @@
                         <div class="input-resumo-container">
                           <label for="resumo">Resumo:</label>
                           <textarea name="resumo" id="resumo" maxlength="200"></textarea>
+                        </div>
+
+                        <div class="input-image-container">
+                          <label for="imagem">Escolha a capa da noticia: </label>
+                          <input class="input-image" type="file" name="image" id="image" value="Selecionar imagem">
                         </div>
 
                         <div class="rodape-container">

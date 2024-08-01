@@ -28,7 +28,7 @@
           {{#noticias}}
             <div class="card">
               <div class="capa-container">
-                <img src={{capa}} alt="">
+                <img src="/uploads/{{image}}" alt="">
                 <span>{{tema}}</span>
               </div>
               <div class="conteudo-container">
@@ -38,7 +38,10 @@
                 </p>
                  <a href="/noticia/{{id}}">LEIA MAIS</a>
               </div>
-              <p class="data">{{data}}</p>
+              <div class="rodape-container">
+                <p class="autor">Autor: {{autor}}</p>
+                <p class="data">{{date}}</p>
+              </div>
             </div>
           {{/noticias}}
           {{^noticias}}
