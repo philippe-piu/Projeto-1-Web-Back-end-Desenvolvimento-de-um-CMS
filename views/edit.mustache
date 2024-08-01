@@ -23,7 +23,7 @@
 
     <main class="main-container">
       <div class="criar-noticia-container">
-        <form class="form-noticia" action="/editar/{{id}}" method="POST"> <!-- Certifique-se de que "{{id}}" é passado corretamente -->
+        <form class="form-noticia" action="/editar/{{id}}" method="POST" enctype="multipart/form-data">
           <div class="header-form">
             <h1>Edite sua notícia esportiva</h1>
             <h2>Altere as informações abaixo que desejar para alterar a notícia!</h2>
@@ -48,6 +48,11 @@
             <div class="input-resumo-container">
               <label for="resumo">Resumo:</label>
               <textarea name="resumo" id="resumo" maxlength="200">{{resumo}}</textarea> <!-- Verifique se "{{resumo}}" está correto -->
+            </div>
+
+            <div class="input-image-container">
+              <label for="imagem">Escolha a capa da noticia: </label>
+              <input type="file" name="image" id="image" value="Selecionar imagem">
             </div>
             
             <div class="rodape-container">
